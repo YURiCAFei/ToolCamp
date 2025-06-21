@@ -1,0 +1,17 @@
+name: photogoblin-clean
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pyqt
+  - geopandas
+  - fiona
+  - gdal
+  - shapely
+  - numpy
+  - pandas
+  - opencv
+  - matplotlib
+  - tqdm
+

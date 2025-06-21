@@ -1,0 +1,30 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.so
+
+# === Jupyter / Logs ===
+*.log
+*.ipynb_checkpoints
+
+# === Environment ===
+env/
+venv/
+.venv/
+.env
+*.env
+
+# === Output data (可选) ===
+output/
+*.tif
+*.shp
+*.dbf
+*.prj
+*.shx
+
+# === PyCharm ===
+.idea/
+
+# === System files ===
+.DS_Store
+Thumbs.db
