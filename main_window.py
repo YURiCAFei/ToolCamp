@@ -13,6 +13,9 @@ from functions.csv_merger import batch_merge_csv_gui
 from functions.lidar_downsampler import batch_downsample_gui
 from functions.ortho_rectify import launch_orthorectify_gui
 from functions.archive_extractor import launch_extract_gui
+from functions.image_selector import select_images_gui
+from functions.pyramid_builder import build_pyramids_gui
+from functions.image_boundary_extractor import image_boundary_gui
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -44,6 +47,8 @@ class MainWindow(QMainWindow):
         shp_menu = QMenu("SHP", self)
         survey_menu.addMenu(shp_menu)
         self.add_action(shp_menu, "生成矩形边界", create_rectangle_gui)
+        self.add_action(shp_menu, "影像优选", select_images_gui)
+        self.add_action(shp_menu, "影像边界SHP提取", image_boundary_gui)
 
         # ├─ DSM生产
         dsm_menu = QMenu("DSM生产", self)
@@ -55,6 +60,7 @@ class MainWindow(QMainWindow):
         image_menu = QMenu("图像处理", self)
         survey_menu.addMenu(image_menu)
         self.add_action(image_menu, "影像正射", launch_orthorectify_gui)
+        self.add_action(image_menu, "构建影像金字塔", build_pyramids_gui)
 
     def add_action(self, menu, label, func):
         action = QAction(label, self)
