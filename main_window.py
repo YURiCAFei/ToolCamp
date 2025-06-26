@@ -16,6 +16,8 @@ from functions.archive_extractor import launch_extract_gui
 from functions.image_selector import select_images_gui
 from functions.pyramid_builder import build_pyramids_gui
 from functions.image_boundary_extractor import image_boundary_gui
+from functions.shp_merger import merge_shp_gui
+from functions.shp_classifier import classify_shp_gui
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -49,6 +51,8 @@ class MainWindow(QMainWindow):
         self.add_action(shp_menu, "生成矩形边界", create_rectangle_gui)
         self.add_action(shp_menu, "影像优选", select_images_gui)
         self.add_action(shp_menu, "影像边界SHP提取", image_boundary_gui)
+        self.add_action(shp_menu, "SHP合并", merge_shp_gui)
+        self.add_action(shp_menu, "SHP分类", classify_shp_gui)
 
         # ├─ DSM生产
         dsm_menu = QMenu("DSM生产", self)
